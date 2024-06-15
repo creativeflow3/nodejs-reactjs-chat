@@ -132,3 +132,7 @@ dist
 # node modules
 backend/node_modules
 fontend/node_modules
+
+# vscode
+backend/.vscode
+fontend/.vscode
