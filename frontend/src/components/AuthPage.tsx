@@ -1,13 +1,18 @@
 import { type ReactNode } from 'react';
 import axios from 'axios';
+import { UserType } from '../types';
 
-const AuthPage = (props): ReactNode => {
+type Props = {
+  onAuth: (user: UserType) => void;
+};
+
+const AuthPage = ({ onAuth }: Props): ReactNode => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
     axios
       .post('http://localhost:3001/authenticate', { username: value })
-      .then((r) => props.onAuth({ ...r.data, secret: value }))
+      .then((r) => onAuth({ ...r.data, secret: value }))
       .catch((e) => console.log('Auth Error', e));
   };
 

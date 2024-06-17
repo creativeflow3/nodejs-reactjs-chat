@@ -135,4 +135,7 @@ fontend/node_modules
 
 # vscode
 backend/.vscode
-fontend/.vscode
+frontend/.vscode
+
+#vite
+frontend/.vite

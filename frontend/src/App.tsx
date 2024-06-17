@@ -13,7 +13,7 @@ function App(): ReactNode {
   if (!user) {
     return <AuthPage onAuth={(user: UserType) => setUser(user)} />;
   } else {
-    return <ChatsPage user={user} />;
+    return <ChatsPage {...user} />;
   }
 }
 
